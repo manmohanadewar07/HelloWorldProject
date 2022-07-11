@@ -4,7 +4,7 @@ pipeline {
         stage('Start Server') {
             steps {
 				sh 'npm install'
-				sh './scripts/test.sh'
+				sh './scripts/start.sh'
             }
         }
         stage('Test Request') {
