@@ -3,19 +3,20 @@ pipeline {
     stages {
         stage('Start Server') {
             steps {
-                echo 'Starting Web Server on Local host port 8081'
 				sh 'npm install'
-				sh 'npm start'
+				sh '/scripts/test.sh'
             }
         }
         stage('Test Request') {
             steps {
                 echo 'Testing..'
+				sh '/scripts/deliver.sh'
             }
         }
         stage('Stop Server') {
             steps {
                 echo 'Deploying....'
+				sh '/scripts/kill.sh'
             }
         }
     }
