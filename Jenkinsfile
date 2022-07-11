@@ -4,7 +4,8 @@ pipeline {
         stage('Start Server') {
             steps {
                 echo 'Starting Web Server on Local host port 8081'
-				sh 'npm start' 
+				sh 'npm install'
+				sh 'npm start'
             }
         }
         stage('Test Request') {
