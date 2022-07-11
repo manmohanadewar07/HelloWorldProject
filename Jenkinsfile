@@ -17,8 +17,8 @@ pipeline {
         stage('Stop Server') {
             steps {
 				echo 'Reading Response.txt file'
-				echo 'Removing Response.txt file'
 				sh './scripts/kill.sh'
+				echo 'Removing Response.txt file'
 				echo 'Stop server'
             }
         }
