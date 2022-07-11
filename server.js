@@ -1,8 +1,8 @@
 const express = require('express');
 
 // Constants
-const PORT = 8081;
-const HOST = '127.0.0.1';
+const PORT = 8081; //Changed prot number to 8081 as Jenkins is running on port 8080
+const HOST = '127.0.0.1'; //ip address for localhost
 
 // App
 const app = express();
