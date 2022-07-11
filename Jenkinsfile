@@ -4,19 +4,19 @@ pipeline {
         stage('Start Server') {
             steps {
 				sh 'npm install'
-				sh '/scripts/test.sh'
+				sh './scripts/test.sh'
             }
         }
         stage('Test Request') {
             steps {
                 echo 'Testing..'
-				sh '/scripts/deliver.sh'
+				sh './scripts/deliver.sh'
             }
         }
         stage('Stop Server') {
             steps {
                 echo 'Deploying....'
-				sh '/scripts/kill.sh'
+				sh './scripts/kill.sh'
             }
         }
     }
