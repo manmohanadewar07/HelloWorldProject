@@ -3,18 +3,23 @@ pipeline {
     stages {
         stage('Start Server') {
             steps {
-				sh './scripts/deliver.sh'
+				sh './scripts/start.sh'
+				echo 'launch server app'
             }
         }
-        stage('Test Request') {
+        stage('Test Response') {
             steps {
-                echo 'Testing..'
+				echo 'Verifying app is up and running'
+				sh './scripts/request.sh'	
+				echo 'Writeing Response to Response.txt file'			
             }
         }
         stage('Stop Server') {
             steps {
-                echo 'Deploying....'
+				echo 'Reading Response.txt file'
+				echo 'Removing Response.txt file'
 				sh './scripts/kill.sh'
+				echo 'Stop server'
             }
         }
     }
